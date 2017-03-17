@@ -96,10 +96,18 @@ class ViewController: UIViewController {
         vwvista.layer.add(animacioncolorFondo, forKey: "backgroundColor")
         vwvista.layer.backgroundColor  = UIColor.darkGray.cgColor
         
-        //Cambiar de posicion 
+        //Cambiar de posicion
         UIView.animate(withDuration: 3.0){
             self.vwvista.frame = CGRect(x: 0, y: 0, width: self.vwvista.frame.size.width, height: self.vwvista.frame.size.height)
         }
+        
+        
+        let animationRotation = CABasicAnimation(keyPath: "transform.rotation")
+        animationRotation.fromValue  = 0.0
+        animationRotation.toValue = M_PI
+        animationRotation.duration  = 5.0
+        
+        vwvista.layer.add(animationRotation, forKey: "transform.rotation")
         
         
     }
